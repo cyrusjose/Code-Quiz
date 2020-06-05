@@ -2,7 +2,13 @@
     box-sizing: border-box;
 }
 
+:root{
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
 body{
+    --hue: var(--hue-neutral);
     padding: 0;
     margin: 0;
     display: flex;
@@ -10,4 +16,5 @@ body{
     height: 100vh;
     align-items: center;
     justify-content: center;
+    background-color: hsl(var(--hue), 100%, 20%);
 }
