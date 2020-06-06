@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+/* Used :root instead of html for higher specificity  */
 :root{
     --hue-neutral: 200;
     --hue-incorrect: 0;
@@ -16,6 +17,7 @@ body{
     height: 100vh;
     align-items: center;
     justify-content: center;
+    /* hsl function: hsl(hue, saturation, lightness) */
     background-color: hsl(var(--hue), 100%, 20%);
 }
 
@@ -44,4 +46,10 @@ body.incorrect{
     gap: 10px;
     /* Provide a space between question area and start/next */
     margin: 20px 0;
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 80%);
 }
