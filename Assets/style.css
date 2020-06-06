@@ -25,3 +25,10 @@ body.correct{
 body.incorrect{
     --hue: var(--hue-incorrect);
 }
+
+.container{
+    width: 800px;
+    max-width: 100%;
+    background-color: white;
+
+}
