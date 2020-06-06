@@ -28,7 +28,7 @@ body.incorrect{
 
 .container{
     width: 800px;
-    max-width: 100%;
+    max-width: 50%;
     background-color: white;
     border-radius: 500px;
     padding: 50px;
