@@ -35,3 +35,13 @@ body.incorrect{
     /* x-offset: 0, y-offset: 0, blur: 10px, spread: 2px*/
     box-shadow: 0 0 10px 4px;
 }
+
+.btn-grid {
+    display: grid;
+    /* Display buttons in two columns */
+    grid-template-columns: repeat(2, auto);
+    /* provide a gab between each button row and column*/
+    gap: 10px;
+    /* Provide a space between question area and start/next */
+    margin: 20px 0;
+}
