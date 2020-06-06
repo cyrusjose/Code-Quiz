@@ -4,7 +4,7 @@
 
 :root{
     --hue-neutral: 200;
-    --hue-wrong: 0;
+    --hue-incorrect: 0;
     --hue-correct: 145;
 }
 body{
@@ -17,4 +17,11 @@ body{
     align-items: center;
     justify-content: center;
     background-color: hsl(var(--hue), 100%, 20%);
+}
+
+body.correct{
+    --hue: var(--hue-correct);
+}
+body.incorrect{
+    --hue: var(--hue-incorrect);
 }
