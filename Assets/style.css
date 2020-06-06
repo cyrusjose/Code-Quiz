@@ -9,6 +9,7 @@
     --hue-correct: 145;
 }
 body{
+    /* Using CSS variables to short-hand hues in HSL and HSLA functions */
     --hue: var(--hue-neutral);
     padding: 0;
     margin: 0;
