@@ -18,7 +18,7 @@ body{
     align-items: center;
     justify-content: center;
     /* hsl function: hsl(hue, saturation, lightness) */
-    background-color: hsl(var(--hue), 100%, 20%);
+    background-color: hsl(var(--hue), 100%, 50%);
 }
 
 body.correct{
@@ -51,5 +51,22 @@ body.incorrect{
 .btn {
     --hue: var(--hue-neutral);
     border: 1px solid hsl(var(--hue), 100%, 30%);
-    background-color: hsl(var(--hue), 100%, 80%);
+    background-color: hsla(var(--hue), 100%, 50%, 0.5);
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    outline: none;
+}
+.btn:hover{
+    border-color: black;
+    background-color: hsl(var(--hue), 100%, 50%);
+}
+
+.btn.correct{
+    --hue: var(--hue-correct);
+    color: black;
+}
+.btn.incorrect{
+    --hue: var(--hue-incorrect);
+    color:black;
 }
