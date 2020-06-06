@@ -1,8 +1,11 @@
 var startButton = document.querySelector('#start-btn');
 var nextButton = document.querySelector('#next-btn');
+var questionContainerEl = document.querySelector('#question-container');
 
 
 function start() {
+    startButton.classList.add('hide');
+    questionContainerEl.classList.remove('hide');
 
 }
 
