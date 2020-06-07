@@ -6,6 +6,7 @@ var questionContainerEl = document.querySelector('#question-container');
 var controlPanel = document.querySelector('.controls')
 var questionEl = document.querySelector('#question');
 var answerButtonsEl = document.querySelector('#answer-buttons');
+var submitButtonEl = document.querySelector('#submit');
 var timerEl = document.querySelector('#timer');
 var timeText = document.querySelector('#time');
 var questions = [{
@@ -149,6 +150,11 @@ function finalScore() {
     showScore.innerText = 'Your score is: ' + score;
 }
 
+function showScoreList(e) {
+    e.preventDefault();
+}
+
 startButton.addEventListener('click', start);
 nextButton.addEventListener('click', next);
 getScoreButton.addEventListener('click', finalScore)
+submitButtonEl.addEventListener('click', showScoreList)
