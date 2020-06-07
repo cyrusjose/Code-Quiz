@@ -31,6 +31,7 @@ function start() {
 }
 
 function next() {
+    reset();
     displayQuestion(shuffled[currentQestion]);
     currentQestion++;
 
@@ -55,7 +56,9 @@ function displayQuestion(question) {
         answerButtonsEl.appendChild(button);
     });
 }
-
+function reset() {
+    nextButton.classList.add('hide');
+}
 function selectAnswer(event) {
     const selected = event.target;
     const correct = selected.dataset.correct;
