@@ -45,7 +45,8 @@ body.incorrect {
 }
 
 #time,
-#score {
+#score,
+#player-score {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;

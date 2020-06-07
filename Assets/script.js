@@ -152,6 +152,16 @@ function finalScore() {
 
 function showScoreList(e) {
     e.preventDefault();
+    document.querySelector('.score').classList.add('hide');
+    document.querySelector('#submit').classList.add('hide');
+    hideItems();
+    reset();
+    timeText.remove();
+    getScoreButton.remove();
+    document.querySelector('#score-list').classList.remove('hide');
+    var player = document.querySelector('#player-score');
+    var userName = document.querySelector('#userName').value;
+    player.innerText = 'Player: ' + userName + '\n' + 'Score: ' + score;
 }
 
 startButton.addEventListener('click', start);
