@@ -57,7 +57,8 @@ body.incorrect {
     margin-top: 15px;
 }
 
-form {
+form,
+h1 {
     display: grid;
     justify-content: center;
     align-items: center;

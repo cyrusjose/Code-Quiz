@@ -31,7 +31,7 @@ var shuffled, currentQestion;
 var score = 0;
 
 function timer() {
-    var sec = 100;
+    var sec = 2;
     var timer = setInterval(function() {
         if (sec >= 0) {
             timerEl.innerText = 'Timer: ' + sec + ' seconds';
