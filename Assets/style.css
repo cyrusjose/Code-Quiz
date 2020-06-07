@@ -33,7 +33,7 @@ body.incorrect{
     width: 800px;
     max-width: 50%;
     background-color: white;
-    border-radius: 500px;
+    border-radius: 50px;
     padding: 50px;
     /* x-offset: 0, y-offset: 0, blur: 10px, spread: 2px*/
     box-shadow: 0 0 10px 4px;
