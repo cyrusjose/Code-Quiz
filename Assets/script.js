@@ -37,6 +37,7 @@ function timer() {
             clearInterval(timer);
             reset();
             getScore.classList.remove('hide');
+            document.querySelector('#time').classList.remove('hide');
             hideItems();
         }
     }, 1000);
