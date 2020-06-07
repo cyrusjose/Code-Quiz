@@ -74,11 +74,17 @@ function selectAnswer(event) {
 }
 
 function statClass(element, correct) {
+    clearStat();
     if (correct) {
         element.classList.add('correct');
     } else {
         element.classList.add('incorrect');
     }
+}
+
+function clearStat(element) {
+    element.classList.remove('correct');
+    element.classList.remove('incorrect');
 }
 
 function reset() {
