@@ -12,6 +12,15 @@ var questions = [
             { text: '22', correct: false },
             { text: '0', correct: false },
         ]
+    },
+    {
+        question: 'What is 3+2?',
+        answers: [
+            { text: '4', correct: true },
+            { text: '6', correct: false },
+            { text: '5', correct: false },
+            { text: '0', correct: false },
+        ]
     }
 ]
 var shuffled, currentQestion;
@@ -20,10 +29,10 @@ var shuffled, currentQestion;
 function start() {
     startButton.classList.add('hide');
     questionContainerEl.classList.remove('hide');
-    shuffled = questions.sort(function () {
+    shuffled = questions.sort(function(){ 
         // The range will be from -0.5 to +0.5 and depending on the sign it will be sorted a certain way.
         Math.random() - 0.5;
-    })
+    });
     // This is the index number for the current question.
     currentQestion = 0;
     next();
@@ -65,7 +74,7 @@ function selectAnswer(event) {
     Array.from(answerButtonsEl.children).forEach(button => {
         statClass(button, button.dataset.correct);
     });
-    if (shuffled.length > currentQestion + 1) {
+    if (shuffled.length > currentQestion) {
         nextButton.classList.remove('hide');
     } else {
         startButton.innerText = 'restart';
