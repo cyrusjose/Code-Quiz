@@ -1,6 +1,7 @@
 var startButton = document.querySelector('#start-btn');
 var nextButton = document.querySelector('#next-btn');
 var getScore = document.querySelector('#score-btn');
+var showScore = document.querySelector('#score');
 var questionContainerEl = document.querySelector('#question-container');
 var controlPanel = document.querySelector('.controls')
 var questionEl = document.querySelector('#question');
@@ -30,7 +31,7 @@ var shuffled, currentQestion;
 var score = 0;
 
 function timer() {
-    var sec = 150;
+    var sec = 2;
     var timer = setInterval(function() {
         if (sec >= 0) {
             timerEl.innerText = 'Timer: ' + sec + ' seconds';
@@ -113,7 +114,8 @@ function selectAnswer(event) {
     });
     // Check to see if the question is the last question
     if (shuffled.length > currentQestion) {
-        nextButton.classList.remove('hide');
+        // nextButton.classList.remove('hide');
+        nextButton.classList.remove('hide')
     } else {
         getScore.classList.remove('hide');
     }
@@ -141,5 +143,15 @@ function reset() {
     }
 }
 
+function finalScore() {
+    hideItems();
+    // reset();
+    controlPanel.classList.add('hide');
+    timeText.classList.add('hide');
+    document.querySelector('.score').classList.remove('hide');
+    showScore.innerText = 'Your score is: ' + score;
+}
+
 startButton.addEventListener('click', start);
 nextButton.addEventListener('click', next);
+getScore.addEventListener('click', finalScore)

@@ -44,7 +44,8 @@ body.incorrect {
     font-size: 2.0rem;
 }
 
-#time {
+#time,
+#score {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
