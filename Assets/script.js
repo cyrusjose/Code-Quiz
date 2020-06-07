@@ -32,26 +32,26 @@ function start() {
 
 function next() {
     displayQuestion(shuffled[currentQestion]);
-    question.answers.forEach(answer => {
-        // create buttons using const because it will only apply here. 
-        const button = document.createElement('button');
-        // Setting text in buttons to what we have in our questions object
-        button.innerText = answer.text;
-        // adding the class "btn" to the newly created buttons.
-        button.classList.add('btn');
-        // Check to see if answer is correct
-        if (answer.correct){
-            // Add a data attribute to our button with the value of correct
-            // This is to check if the selcted answer is correct.
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerButtonsEl.appendChild(button);
-    });
 }
 
 function displayQuestion(question) {
  questionEl.innerText = question.question;
+ question.answers.forEach(answer => {
+    // create buttons using const because it will only apply here. 
+    const button = document.createElement('button');
+    // Setting text in buttons to what we have in our questions object
+    button.innerText = answer.text;
+    // adding the class "btn" to the newly created buttons.
+    button.classList.add('btn');
+    // Check to see if answer is correct
+    if (answer.correct){
+        // Add a data attribute to our button with the value of correct
+        // This is to check if the selcted answer is correct.
+        button.dataset.correct = answer.correct;
+    }
+    button.addEventListener('click', selectAnswer);
+    answerButtonsEl.appendChild(button);
+});
 }
 
 function selectAnswer(event) {
