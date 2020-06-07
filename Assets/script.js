@@ -61,6 +61,7 @@ function selectAnswer(event) {
     const selected = event.target;
     const correct = selected.dataset.correct;
     statClass(document.body, correct);
+    // Ensure that what we get back is an array so that we can use forEach to loop through the array.
     Array.from(answerButtonsEl.children).forEach(button => {
         statClass(button, button.dataset.correct);
     });
