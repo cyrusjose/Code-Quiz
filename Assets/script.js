@@ -16,9 +16,9 @@ var questions = [
     {
         question: 'What is 3+2?',
         answers: [
-            { text: '4', correct: true },
+            { text: '4', correct: false },
             { text: '6', correct: false },
-            { text: '5', correct: false },
+            { text: '5', correct: true },
             { text: '0', correct: false },
         ]
     }
