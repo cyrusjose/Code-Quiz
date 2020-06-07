@@ -56,9 +56,7 @@ function displayQuestion(question) {
         answerButtonsEl.appendChild(button);
     });
 }
-function reset() {
-    nextButton.classList.add('hide');
-}
+
 function selectAnswer(event) {
     const selected = event.target;
     const correct = selected.dataset.correct;
@@ -79,6 +77,13 @@ function statClass(element, correct) {
         element.classList.add('correct');
     } else {
         element.classList.add('incorrect');
+    }
+}
+
+function reset() {
+    nextButton.classList.add('hide');
+    while (answerButtonsEl.firstChild){
+        answerButtonsEl.removeChild(answerButtonsEl.firstChild);
     }
 }
 
