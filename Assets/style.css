@@ -1,14 +1,19 @@
-*, *::before, *::after{
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
+
 /* Used :root instead of html for higher specificity  */
-:root{
+
+:root {
     --hue-neutral: 200;
     --hue-incorrect: 0;
     --hue-correct: 145;
 }
-body{
+
+body {
     /* Using CSS variables to short-hand hues in HSL and HSLA functions */
     --hue: var(--hue-neutral);
     padding: 0;
@@ -22,14 +27,21 @@ body{
     background-color: hsl(var(--hue), 100%, 50%);
 }
 
-body.correct{
+body.correct {
     --hue: var(--hue-correct);
 }
-body.incorrect{
+
+body.incorrect {
     --hue: var(--hue-incorrect);
 }
 
-.container{
+#timer {
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
     width: 800px;
     max-width: 50%;
     background-color: white;
@@ -58,29 +70,35 @@ body.incorrect{
     color: white;
     outline: none;
 }
-.btn:hover{
+
+.btn:hover {
     border-color: black;
     background-color: hsl(var(--hue), 100%, 50%);
 }
 
-.btn.correct{
+.btn.correct {
     --hue: var(--hue-correct);
     color: black;
 }
-.btn.incorrect{
+
+.btn.incorrect {
     --hue: var(--hue-incorrect);
-    color:black;
+    color: black;
 }
-.start-btn, .next-btn{
+
+.start-btn,
+.next-btn {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
 }
-.controls{
+
+.controls {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.hide{
+
+.hide {
     display: none;
 }

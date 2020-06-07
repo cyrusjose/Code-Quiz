@@ -3,8 +3,8 @@ var nextButton = document.querySelector('#next-btn');
 var questionContainerEl = document.querySelector('#question-container');
 var questionEl = document.querySelector('#question');
 var answerButtonsEl = document.querySelector('#answer-buttons');
-var questions = [
-    {
+var timerEl = document.querySelector('#timer');
+var questions = [{
         question: 'What is 2+2?',
         answers: [
             { text: '4', correct: true },
@@ -25,11 +25,23 @@ var questions = [
 ]
 var shuffled, currentQestion;
 
+function timer() {
+    var sec = 30;
+    var time = setInterval(function() {
+        timerEl.innerText = '00:' + sec;
+        sec--;
+        if (sec < 0) {
+            clearInterval(timer);
+        }
+    }, 1000);
+
+}
 
 function start() {
+    timer();
     startButton.classList.add('hide');
     questionContainerEl.classList.remove('hide');
-    shuffled = questions.sort(function(){ 
+    shuffled = questions.sort(function() {
         // The range will be from -0.5 to +0.5 and depending on the sign it will be sorted a certain way.
         Math.random() - 0.5;
     });
@@ -99,7 +111,7 @@ function clearStat(element) {
 function reset() {
     clearStat(document.body);
     nextButton.classList.add('hide');
-    while (answerButtonsEl.firstChild){
+    while (answerButtonsEl.firstChild) {
         answerButtonsEl.removeChild(answerButtonsEl.firstChild);
     }
 }
