@@ -31,7 +31,7 @@ var shuffled, currentQestion;
 var score = 0;
 
 function timer() {
-    var sec = 2;
+    var sec = 100;
     var timer = setInterval(function() {
         if (sec >= 0) {
             timerEl.innerText = 'Timer: ' + sec + ' seconds';
@@ -45,7 +45,7 @@ function timer() {
             hideItems();
         }
     }, 1000);
-
+    return sec;
 }
 
 function hideItems() {
@@ -114,6 +114,7 @@ function selectAnswer(event) {
     } else {
         getScoreButton.classList.remove('hide');
     }
+
 }
 
 function statClass(element, correct) {
