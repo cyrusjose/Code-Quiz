@@ -46,12 +46,16 @@ body.incorrect {
 
 #time,
 #score,
-#player-score {
+#player-score,
+.welcome {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
     font-size: 50px;
     font-weight: bolder;
+}
+#sub {
+    margin-bottom: 40px;
 }
 
 #submit {
@@ -67,7 +71,6 @@ h1,
     font-size: 30px;
     font-weight: bold;
 }
-
 .container {
     display: grid;
     width: 800px;
@@ -124,7 +127,7 @@ h1,
 }
 
 .controls {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
 }

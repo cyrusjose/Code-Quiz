@@ -10,27 +10,29 @@ var submitButtonEl = document.querySelector('#submit');
 var homeButtonEl = document.querySelector('#ret');
 var timerEl = document.querySelector('#timer');
 var timeText = document.querySelector('#time');
-var questions = [{
-        question: 'What is 2+2?',
-        answers: [
-            { text: '4', correct: true },
-            { text: '6', correct: false },
-            { text: '22', correct: false },
-            { text: '0', correct: false },
-        ]
-    },
-    {
-        question: 'What is 3+2?',
-        answers: [
-            { text: '4', correct: false },
-            { text: '6', correct: false },
-            { text: '5', correct: true },
-            { text: '0', correct: false },
-        ]
-    }
-]
-var shuffled, currentQestion;
+var playerName = localStorage.getItem('User Name');
+var scoreValue = localStorage.getItem('Score');
 var score = 0;
+var shuffled, currentQestion;
+var questions = [{
+    question: 'What is 2+2?',
+    answers: [
+        { text: '4', correct: true },
+        { text: '6', correct: false },
+        { text: '22', correct: false },
+        { text: '0', correct: false },
+    ]
+},
+{
+    question: 'What is 3+2?',
+    answers: [
+        { text: '4', correct: false },
+        { text: '6', correct: false },
+        { text: '5', correct: true },
+        { text: '0', correct: false },
+    ]
+}
+]
 
 function setTimer(timer) {
     var sec = 100;
@@ -74,6 +76,8 @@ function next() {
     reset();
     displayQuestion(shuffled[currentQestion]);
     currentQestion++;
+    document.querySelector('.welcome').classList.add('hide')
+    document.querySelector('#sub').classList.add('hide')
 
 }
 
