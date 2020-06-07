@@ -26,14 +26,13 @@ var questions = [{
 var shuffled, currentQestion;
 
 function timer() {
-    var sec = 30;
+    var sec = 2;
     var timer = setInterval(function() {
         timerEl.innerText = 'Timer: ' + sec + ' seconds';
         sec--;
         if (sec < 0) {
             clearInterval(timer);
             timerEl.innerText = 'Time\'s up';
-
         }
     }, 1000);
 
