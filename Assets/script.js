@@ -27,9 +27,10 @@ var questions = [{
     }
 ]
 var shuffled, currentQestion;
+var score = 0;
 
 function timer() {
-    var sec = 2;
+    var sec = 150;
     var timer = setInterval(function() {
         if (sec >= 0) {
             timerEl.innerText = 'Timer: ' + sec + ' seconds';
@@ -97,6 +98,14 @@ function displayQuestion(question) {
 function selectAnswer(event) {
     const selected = event.target;
     const correct = selected.dataset.correct;
+    if (correct) {
+        score++;
+    } else {
+        if (score > 0) {
+            score--;
+        };
+    }
+    console.log(score)
     statClass(document.body, correct);
     // Ensure that what we get back is an array so that we can use forEach to loop through the array.
     Array.from(answerButtonsEl.children).forEach(button => {
