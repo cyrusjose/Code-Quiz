@@ -48,7 +48,6 @@ function timer() {
 
 function hideItems() {
     timerEl.classList.add('hide');
-    // document.querySelector('#answer-buttons').classList.add('hide');
     nextButton.classList.add('hide');
     startButton.classList.add('hide');
     questionEl.classList.add('hide');
@@ -107,8 +106,7 @@ function selectAnswer(event) {
     if (shuffled.length > currentQestion) {
         nextButton.classList.remove('hide');
     } else {
-        startButton.innerText = 'restart';
-        startButton.classList.remove('hide');
+        getScore.classList.remove('hide');
     }
 }
 
