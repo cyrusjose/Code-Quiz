@@ -97,6 +97,7 @@ function clearStat(element) {
 }
 
 function reset() {
+    clearStat(document.body);
     nextButton.classList.add('hide');
     while (answerButtonsEl.firstChild){
         answerButtonsEl.removeChild(answerButtonsEl.firstChild);
