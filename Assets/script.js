@@ -170,6 +170,9 @@ function showScoreList(e) {
     homeButtonEl.addEventListener('click', function() {
         window.location.reload();
     })
+
+    localStorage.setItem("User Name", userName);
+    localStorage.setItem("Score", score);
 }
 
 startButton.addEventListener('click', start);
