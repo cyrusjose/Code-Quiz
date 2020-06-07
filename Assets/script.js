@@ -32,11 +32,11 @@ function start() {
 
 function next() {
     displayQuestion(shuffled[currentQestion]);
-    questions.answers.forEach(answers => {
+    question.answers.forEach(answer => {
         // create buttons using const because it will only apply here. 
         const button = document.createElement('button');
         // Setting text in buttons to what we have in our questions object
-        buttons.innerText = answer.text;
+        button.innerText = answer.text;
         // adding the class "btn" to the newly created buttons.
         button.classList.add('btn');
         // Check to see if answer is correct
@@ -54,7 +54,7 @@ function displayQuestion(question) {
  questionEl.innerText = question.question;
 }
 
-function selectAnswer() {
+function selectAnswer(event) {
 
 }
 
