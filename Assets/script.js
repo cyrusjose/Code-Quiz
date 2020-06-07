@@ -33,9 +33,9 @@ var questions = [{
     ]
 }
 ]
+var sec = 100;
 
 function setTimer(timer) {
-    var sec = 100;
     var timer = setInterval(function() {
         if (sec >= 0) {
             timerEl.innerText = 'Timer: ' + sec + ' seconds';
@@ -107,8 +107,7 @@ function selectAnswer(event, timer) {
     if (correct) {
         score++;
     } else if (!correct) {
-        timer = timer - 2;
-        setTimer(timer);
+        sec -= 20;
     }
     statClass(document.body, correct);
     // Ensure that what we get back is an array so that we can use forEach to loop through the array.
@@ -173,9 +172,15 @@ function showScoreList(e) {
     homeButtonEl.addEventListener('click', function() {
         window.location.reload();
     })
-
-    localStorage.setItem("User Name", userName);
-    localStorage.setItem("Score", score);
+    // var userInitial = [];
+    // var retrieveData = localStorage.getItem('myUserInitials');
+    // userInitial = JSON.parse(retrieveData);
+    // userInitial.push(player);
+    // if (typeof(Storage) !== 'undefined' ){
+    //     localStorage.setItem('myUserInitials', JSON.stringify(userInitial));
+    //     localStorage.setItem('Score', score);
+    // }
+    // var myUserInitials2 = JSON.parse(retrieveData)
 }
 
 startButton.addEventListener('click', start);
