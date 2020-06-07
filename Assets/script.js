@@ -7,6 +7,7 @@ var controlPanel = document.querySelector('.controls')
 var questionEl = document.querySelector('#question');
 var answerButtonsEl = document.querySelector('#answer-buttons');
 var submitButtonEl = document.querySelector('#submit');
+var homeButtonEl = document.querySelector('#ret');
 var timerEl = document.querySelector('#timer');
 var timeText = document.querySelector('#time');
 var questions = [{
@@ -46,7 +47,6 @@ function timer() {
             hideItems();
         }
     }, 1000);
-    return sec;
 }
 
 function hideItems() {
@@ -154,6 +154,7 @@ function showScoreList(e) {
     e.preventDefault();
     document.querySelector('.score').classList.add('hide');
     document.querySelector('#submit').classList.add('hide');
+    document.querySelector('#ret').classList.remove('hide');
     hideItems();
     reset();
     timeText.remove();
@@ -161,7 +162,10 @@ function showScoreList(e) {
     document.querySelector('#score-list').classList.remove('hide');
     var player = document.querySelector('#player-score');
     var userName = document.querySelector('#userName').value;
-    player.innerText = 'Player: ' + userName + '\n' + 'Score: ' + score;
+    player.innerText = 'Player: ' + userName.toUpperCase() + '\n' + 'Score: ' + score;
+    homeButtonEl.addEventListener('click', function() {
+        window.location.reload();
+    })
 }
 
 startButton.addEventListener('click', start);
