@@ -53,6 +53,18 @@ body.incorrect {
     font-weight: bolder;
 }
 
+#submit {
+    margin-top: 15px;
+}
+
+form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 .container {
     display: grid;
     width: 800px;

@@ -1,6 +1,6 @@
 var startButton = document.querySelector('#start-btn');
 var nextButton = document.querySelector('#next-btn');
-var getScore = document.querySelector('#score-btn');
+var getScoreButton = document.querySelector('#score-btn');
 var showScore = document.querySelector('#score');
 var questionContainerEl = document.querySelector('#question-container');
 var controlPanel = document.querySelector('.controls')
@@ -39,7 +39,7 @@ function timer() {
         } else {
             clearInterval(timer);
             reset();
-            getScore.classList.remove('hide');
+            getScoreButton.classList.remove('hide');
             timeText.classList.remove('hide');
             timeText.innerText = "Time's Up!";
             hideItems();
@@ -106,7 +106,6 @@ function selectAnswer(event) {
             score--;
         };
     }
-    console.log(score)
     statClass(document.body, correct);
     // Ensure that what we get back is an array so that we can use forEach to loop through the array.
     Array.from(answerButtonsEl.children).forEach(button => {
@@ -117,7 +116,7 @@ function selectAnswer(event) {
         // nextButton.classList.remove('hide');
         nextButton.classList.remove('hide')
     } else {
-        getScore.classList.remove('hide');
+        getScoreButton.classList.remove('hide');
     }
 }
 
@@ -144,14 +143,15 @@ function reset() {
 }
 
 function finalScore() {
-    hideItems();
-    // reset();
-    controlPanel.classList.add('hide');
-    timeText.classList.add('hide');
     document.querySelector('.score').classList.remove('hide');
+    document.querySelector('#submit').classList.remove('hide');
+    hideItems();
+    reset();
+    timeText.remove();
+    getScoreButton.remove();
     showScore.innerText = 'Your score is: ' + score;
 }
 
 startButton.addEventListener('click', start);
 nextButton.addEventListener('click', next);
-getScore.addEventListener('click', finalScore)
+getScoreButton.addEventListener('click', finalScore)
