@@ -32,7 +32,7 @@ var questions = [{
 var shuffled, currentQestion;
 var score = 0;
 
-function timer() {
+function setTimer(timer) {
     var sec = 100;
     var timer = setInterval(function() {
         if (sec >= 0) {
@@ -47,6 +47,7 @@ function timer() {
             hideItems();
         }
     }, 1000);
+    // selectAnswer(timer);
 }
 
 function hideItems() {
@@ -57,7 +58,7 @@ function hideItems() {
 }
 
 function start() {
-    timer();
+    setTimer();
     startButton.classList.add('hide');
     questionContainerEl.classList.remove('hide');
     shuffled = questions.sort(function() {
@@ -97,11 +98,14 @@ function displayQuestion(question) {
     });
 }
 
-function selectAnswer(event) {
+function selectAnswer(event, timer) {
     const selected = event.target;
     const correct = selected.dataset.correct;
     if (correct) {
         score++;
+    } else if (!correct) {
+        timer = timer - 2;
+        setTimer(timer);
     }
     statClass(document.body, correct);
     // Ensure that what we get back is an array so that we can use forEach to loop through the array.
