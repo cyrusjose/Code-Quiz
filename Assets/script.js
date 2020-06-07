@@ -55,7 +55,20 @@ function displayQuestion(question) {
 }
 
 function selectAnswer(event) {
+    const selected = event.target;
+    const correct = selected.dataset.correct;
+    statClass(document.body, correct);
+    Array.from(answerButtonsEl.children).forEach(button =>{
+        statClass(button, button.dataset.correct);
+    });
+}
 
+function statClass(element, correct){
+    if(correct){
+        element.classList.add('correct');
+    } else {
+        element.classList.add('incorrect');
+    }
 }
 
 startButton.addEventListener('click', start);
