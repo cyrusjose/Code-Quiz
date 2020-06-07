@@ -1,6 +1,8 @@
 var startButton = document.querySelector('#start-btn');
 var nextButton = document.querySelector('#next-btn');
+var getScore = document.querySelector('#score-btn');
 var questionContainerEl = document.querySelector('#question-container');
+var controlPanel = document.querySelector('.controls')
 var questionEl = document.querySelector('#question');
 var answerButtonsEl = document.querySelector('#answer-buttons');
 var timerEl = document.querySelector('#timer');
@@ -28,14 +30,24 @@ var shuffled, currentQestion;
 function timer() {
     var sec = 2;
     var timer = setInterval(function() {
-        timerEl.innerText = 'Timer: ' + sec + ' seconds';
-        sec--;
-        if (sec < 0) {
+        if (sec >= 0) {
+            timerEl.innerText = 'Timer: ' + sec + ' seconds';
+            sec--;
+        } else {
             clearInterval(timer);
-            timerEl.innerText = 'Time\'s up';
+            reset();
+            getScore.classList.remove('hide');
+            hideItems();
         }
     }, 1000);
 
+}
+
+function hideItems() {
+    timerEl.classList.add('hide');
+    document.querySelector('#answer-buttons').classList.add('hide');
+    nextButton.classList.add('hide');
+    questionEl.classList.add('hide');
 }
 
 function start() {
