@@ -27,11 +27,13 @@ var shuffled, currentQestion;
 
 function timer() {
     var sec = 30;
-    var time = setInterval(function() {
-        timerEl.innerText = '00:' + sec;
+    var timer = setInterval(function() {
+        timerEl.innerText = 'Timer: ' + sec + ' seconds';
         sec--;
         if (sec < 0) {
             clearInterval(timer);
+            timerEl.innerText = 'Time\'s up';
+
         }
     }, 1000);
 
@@ -86,6 +88,7 @@ function selectAnswer(event) {
     Array.from(answerButtonsEl.children).forEach(button => {
         statClass(button, button.dataset.correct);
     });
+    // Check to see if the question is the last question
     if (shuffled.length > currentQestion) {
         nextButton.classList.remove('hide');
     } else {

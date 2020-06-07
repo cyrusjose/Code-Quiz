@@ -35,9 +35,13 @@ body.incorrect {
     --hue: var(--hue-incorrect);
 }
 
-#timer {
-    justify-content: center;
-    align-items: center;
+#timer,
+#question {
+    font-weight: bolder;
+}
+
+#question {
+    font-size: 2.0rem;
 }
 
 .container {
