@@ -6,6 +6,7 @@ var controlPanel = document.querySelector('.controls')
 var questionEl = document.querySelector('#question');
 var answerButtonsEl = document.querySelector('#answer-buttons');
 var timerEl = document.querySelector('#timer');
+var timeText = document.querySelector('#time');
 var questions = [{
         question: 'What is 2+2?',
         answers: [
@@ -37,7 +38,8 @@ function timer() {
             clearInterval(timer);
             reset();
             getScore.classList.remove('hide');
-            document.querySelector('#time').classList.remove('hide');
+            timeText.classList.remove('hide');
+            timeText.innerText = "Time's Up!";
             hideItems();
         }
     }, 1000);
@@ -46,8 +48,9 @@ function timer() {
 
 function hideItems() {
     timerEl.classList.add('hide');
-    document.querySelector('#answer-buttons').classList.add('hide');
+    // document.querySelector('#answer-buttons').classList.add('hide');
     nextButton.classList.add('hide');
+    startButton.classList.add('hide');
     questionEl.classList.add('hide');
 }
 
