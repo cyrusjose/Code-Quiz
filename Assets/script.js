@@ -47,7 +47,6 @@ function setTimer(timer) {
             hideItems();
         }
     }, 1000);
-    // selectAnswer(timer);
 }
 
 function hideItems() {
