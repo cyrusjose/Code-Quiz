@@ -142,7 +142,7 @@ var questions = [{
 },
 
 ]
-var sec = 100;
+var sec = 112;
 var scoresAndInitials = [];
 function initials() {
     playerScore.innerHTML = '';
