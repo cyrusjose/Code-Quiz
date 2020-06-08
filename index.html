@@ -20,7 +20,11 @@
         </div>
         <div class="controls">
             <div class = "welcome"> Welcome to The Code Quiz!</div>
-            <div id = "sub"> Please note that this is a timed quiz.</div>
+            <div id = "sub"> 
+                Please note that this is a timed quiz.
+                <hr/>
+                For each wrong answer the time will be deducted by 20 seconds.
+            </div>
             
             <button id="start-btn" class="start-btn btn">Start</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
@@ -36,8 +40,9 @@
             </form>
         </div>
         <div id="score-list" class="scores hide">
-            <div id="player-score"></div>
+            <ul id="player-score" class = "hide" ></ul>
             <button id="ret" class="return-btn btn hide">Home</button>
+            <button id="clear" class="clear-btn btn hide">Clear List</button>
         </div>
         <script src="Assets/script.js"></script>
 </body>

@@ -14,7 +14,7 @@
 }
 
 body {
-    /* Using CSS variables to short-hand hues in HSL and HSLA functions */
+    /* Using CSS variables for hues in HSL and HSLA functions */
     --hue: var(--hue-neutral);
     padding: 0;
     margin: 0;
@@ -55,7 +55,7 @@ body.incorrect {
     font-weight: bolder;
 }
 #sub {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 #submit {
@@ -120,10 +120,14 @@ h1,
 .start-btn,
 .next-btn,
 .score-btn,
-.return-btn {
+.return-btn,
+.clear-btn {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
+}
+.clear-btn{
+    margin-top: 10px;
 }
 
 .controls {
