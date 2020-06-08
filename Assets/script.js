@@ -149,7 +149,7 @@ function initials() {
     for (var i = 0; i < scoresAndInitials.length; i++) {
         var initials = scoresAndInitials[i];
         var li = document.createElement('li');
-        li.textContent = 'Player: ' + initials.toUpperCase() + '\n' + 'score: '+ score;
+        li.textContent = 'Player: ' + initials.toUpperCase() + ' \n ' + 'score: '+ score;
         li.setAttribute('data-index', i);
         playerScore.appendChild(li);
     }
