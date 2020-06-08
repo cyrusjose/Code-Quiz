@@ -257,7 +257,7 @@ function displayQuestion(question) {
     });
 }
 
-function selectAnswer(event, timer) {
+function selectAnswer(event) {
     const selected = event.target;
     const correct = selected.dataset.correct;
     if (correct) {
